@@ -8,6 +8,7 @@ public class Main {
 	public static void main(String[] args) {
 		File imageFile = new File("img\\teste_in.jpg");
 		Tesseract instance = new Tesseract();
+		instance.setDatapath("C:\\Users\\RafaelFelipePinheiro\\eclipse-workspace\\Tess4J"); //selecionar diretorio Tess4J
 		instance.setLanguage("eng");
 		
 		try {
