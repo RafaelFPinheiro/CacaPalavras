@@ -8,15 +8,22 @@ public class Main {
 	public static void main(String[] args) {
 		File imageFile = new File("img\\teste_in.jpg");
 		Tesseract instance = new Tesseract();
+		instance.setDatapath("C:\\Users\\Rafael F Pinheiro\\Dropbox\\eclipse-workspace\\Tess4J"); //selecionar diretorio Tess4J
 		instance.setLanguage("eng");
 		
 		try {
 			String result = instance.doOCR(imageFile);
-			System.out.println(result);
+			getFromDictionary(result);
+//			System.out.println(result.contains("PINTOR"));
 		} catch (TesseractException e) {
 			System.err.println(e.getMessage());
 		}
 
+	}
+	
+	public static void getFromDictionary(String result) {
+		System.out.println(result.split("\n"));
+		
 	}
 
 }
