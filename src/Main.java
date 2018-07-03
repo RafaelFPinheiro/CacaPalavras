@@ -13,11 +13,17 @@ public class Main {
 		
 		try {
 			String result = instance.doOCR(imageFile);
-			System.out.println(result.contains("PINTOR"));
+			getFromDictionary(result);
+//			System.out.println(result.contains("PINTOR"));
 		} catch (TesseractException e) {
 			System.err.println(e.getMessage());
 		}
 
+	}
+	
+	public static void getFromDictionary(String result) {
+		System.out.println(result.split("\n"));
+		
 	}
 
 }
